@@ -9,8 +9,8 @@
 locale                   : "en-US"
 title                    : "Jeongeun Lee"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
+name                     : &name "Jeongeun Lee"
+description              : &description "Jeongeun Lee's CV page"
 url                      : https://jeleedict.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "jeleedict/jeleedict.github.io"
@@ -82,10 +82,10 @@ analytics:
 author:
   name             : "Jeongeun Lee"
   avatar           : "4BB51045-EC97-4288-8BEE-40A7A89D05E6.jpeg"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  bio              : "PhD. candidate for bioinformatics, Seoul National University"
+  location         : "Seoul, South Korea"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=jeongeun+lee"
+  pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=jeongeun+lee"
   googlescholar    : "https://scholar.google.com/citations?user=41mc_yYAAAAJ&hl=en"
   email            : "jeleedict@gmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "https://www.linkedin.com/in/jeong-eun-lee-843a4870/"
+  linkedin         : "https://www.linkedin.com/in/jeleedict"
   orcid            : "https://orcid.org/my-orcid?orcid=0000-0002-0656-8428"
   pinterest        :
   soundcloud       :
@@ -176,7 +176,7 @@ kramdown:
 # Collections
 collections:
   teaching:
-    output: true
+    output: false
     permalink: /:collection/:path/
   publications:
     output: true
@@ -185,7 +185,7 @@ collections:
     output: true
     permalink: /:collection/:path/
   talks:
-    output: true
+    output: false
     permalink: /:collection/:path/
 
 
