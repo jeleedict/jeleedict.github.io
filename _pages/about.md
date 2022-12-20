@@ -14,12 +14,12 @@ I love to see how information technology can help solve scientific problems effi
 Education
 ======
 * Ph.D candidate in Bioengineering, Seoul National University, South Korea
- * Dissertation (working title): A Study on Genetic Implications of Korean Individuals through the Establishment of Genome Dataset
- * Advisor: Jinwook Choi, M.D. Ph.D. & Murim Choi, Ph.D.
+  * Dissertation (working title): A Study on Genetic Implications of Korean Individuals through the Establishment of Genome Dataset
+  * Advisor: Jinwook Choi, M.D. Ph.D. & Murim Choi, Ph.D.
 
 * M.S. in Bioengineering, Seoul National University, South Korea
- * Dissertation: Extracting biomarker information from pathology reports using natural language processing
- * Advisor: Jinwook Choi, M.D. Ph.D.
+  * Dissertation: Extracting biomarker information from pathology reports using natural language processing
+  * Advisor: Jinwook Choi, M.D. Ph.D.
 
 * B.S. in Media Communications Engineering (Electrical Engineering) with an honor of summa cum laude
 
