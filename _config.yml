@@ -32,7 +32,7 @@ comments:
     colorscheme          : # "light" (default), "dark"
 staticman:
   allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "gh-pages" # "master", "gh-pages"
+  branch                 : "master" # "master", "gh-pages"
   commitMessage          : "New comment."
   filename               : comment-{@timestamp}
   format                 : "yml"
@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Jeongeun Lee"
-  avatar           : "4BB51045-EC97-4288-8BEE-40A7A89D05E6.jpeg"
+  avatar           : "me.jpeg"
   bio              : "PhD. candidate for bioinformatics, Seoul National University"
   location         : "Seoul, South Korea"
   employer         :
@@ -255,7 +255,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
