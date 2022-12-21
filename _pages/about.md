@@ -27,6 +27,6 @@ Education
 Skills
 ======
 * Computing languages: Python, Java, R, Perl, Bash shell scripting, MySQL, Snakemake, Workflow managment language (WDL)
-* Bioinformatics: Hail, pipeline management for NGS data analysis
+* Bioinformatics: Hail, pipeline management for NGS data analysis (e.g. variant calling, DEG, sc-eQTL ..)
 * Technologies: Amazon cloud computing, Google Cloud Platform, Docker, Apache spark, Git
 * Laboratory skills: Sanger sequencing from saliva sample
