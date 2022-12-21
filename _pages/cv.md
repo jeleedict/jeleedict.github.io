@@ -13,7 +13,8 @@ redirect_from:
 Vitae also available to download [here](../files/20221201_jeongeunlee_cv.pdf).
 {% endcomment %} 
 
-My Curriculum Vitae also available to download [here](../files/20221201_jeongeunlee_cv.pdf).
+This browser does not support PDFs. 
+Please download the CV [here](../files/20221201_jeongeunlee_cv.pdf).
 
 <object data="../files/20221201_jeongeunlee_cv.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="../files/20221201_jeongeunlee_cv.pdf">
