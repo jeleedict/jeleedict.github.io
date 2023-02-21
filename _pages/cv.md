@@ -23,5 +23,5 @@ Please download the CV [here](../files/20230119_jeongeunlee_cv.pdf).
 </object>
 
 {% comment %}
-<iframe src="https://drive.google.com/file/d/1lDXfFVEeanP97huDjY5NSjpmLKgQBLD6/preview" width="100%" height = "800"></iframe>
+<iframe src="https://drive.google.com/file/d/1jOmmdbyjCfG4Us6pO46pZusIqdh4HVLF/preview" width="100%" height = "800"></iframe>
 {% endcomment %}
