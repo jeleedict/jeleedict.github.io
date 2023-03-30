@@ -26,9 +26,9 @@ Education
 
 Research Experience
 ======
-* Postdoctoral Researcher (2023-current)
-  * Affiliation: Biomedical Research Institute, Seoul National University Hospital
-  * Principal Inverstigator: Soo Heon Kwak, M.D. Ph.D.
+* Postdoctoral Researcher (2023-present)
+  * Institution: Biomedical Research Institute, Seoul National University Hospital
+  * Advisor: Soo Heon Kwak, M.D. Ph.D.
 
 
 Skills
