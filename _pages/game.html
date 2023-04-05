@@ -15,6 +15,14 @@
             <label for="images">참가자별 이미지 URL (쉼표로 구분):</label>
             <input type="text" id="images" placeholder="예: url1, url2, url3">
             <button onclick="generateLadder()">사다리 생성</button>
+            <!-- input-section 내부에 추가 -->
+            <label for="numSelected">선택되어야 할 숫자:</label>
+            <input type="number" id="numSelected" placeholder="예: 2">
+            <button onclick="showResults()">결과 표시</button>
+            <!-- input-section 내부에 추가 -->
+            <label for="selectedParticipant">참가자 선택:</label>
+            <select id="selectedParticipant"></select>
+            <button onclick="startLadder()">시작</button>
         </div>
         <canvas id="ladderCanvas"></canvas>
     </div>
