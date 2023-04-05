@@ -5,33 +5,24 @@ permalink: /game/
 author_profile: true
 ---
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사다리 타기 게임</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>사다리 게임</title>
 </head>
 <body>
-    <div class="container">
-        <h1>사다리 타기 게임</h1>
-        <div class="input-section">
-            <label for="participants">참가자 명단 (쉼표로 구분):</label>
-            <input type="text" id="participants" placeholder="예: 홍길동, 이순신, 강감찬">
-            <label for="images">참가자별 이미지 URL (쉼표로 구분):</label>
-            <input type="text" id="images" placeholder="예: url1, url2, url3">
-            <button onclick="generateLadder()">사다리 생성</button>
-            <!-- input-section 내부에 추가 -->
-            <label for="numSelected">선택되어야 할 숫자:</label>
-            <input type="number" id="numSelected" placeholder="예: 2">
-            <button onclick="showResults()">결과 표시</button>
-            <!-- input-section 내부에 추가 -->
-            <label for="selectedParticipant">참가자 선택:</label>
-            <select id="selectedParticipant"></select>
-            <button onclick="startLadder()">시작</button>
-        </div>
-        <canvas id="ladderCanvas"></canvas>
+    <h1>사다리 게임</h1>
+    <div class="input-section">
+        <button onclick="generateLadder()">사다리 생성</button>
+        <br><br>
+        <label for="selectedParticipant">참가자 선택:</label>
+        <select id="selectedParticipant"></select>
+        <button onclick="startLadder()">시작</button>
     </div>
+    <br>
+    <canvas id="canvas"></canvas>
     <script src="script.js"></script>
 </body>
 </html>
