@@ -3,7 +3,19 @@ const ctx = canvas.getContext('2d');
 let participants = [];
 let images = [];
 
+let imageElements = [];
+
+function preloadImages() {
+    imageElements = images.map(src => {
+        const img = new Image();
+        img.src = src;
+        return img;
+    });
+}
+
+
 function generateLadder() {
+    preloadImages();
     participants = document.getElementById('participants').value.split(',').map(p => p.trim());
     images = document.getElementById('images').value.split(',').map(url => url.trim());
     
@@ -27,12 +39,9 @@ function drawLadder() {
         ctx.lineTo(i * 100 + 50, canvas.height);
         ctx.stroke();
 
-        const img = new Image();
-        img.src = images[i];
-        img.onload = () => {
-            ctx.drawImage(img, i * 100 + 25, 0, 50, 50);
-        }
+        ctx.drawImage(imageElements[i], i * 100 + 25, 0, 50, 50);
     }
+
 
     for (let i = 0; i < 5; i++) {
         for (let j = 0; j < participants.length - 1; j++) {
