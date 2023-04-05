@@ -3,11 +3,11 @@ const ctx = canvas.getContext('2d');
 
 const participants = ['Alice', 'Bob', 'Charlie', 'David', 'Eva'];
 const images = [
-    'https://example.com/image1.png',
-    'https://example.com/image2.png',
-    'https://example.com/image3.png',
-    'https://example.com/image4.png',
-    'https://example.com/image5.png',
+    '../images/bio-photo.jpg',
+    '../images/bio-photo.jpg,
+    '../images/bio-photo.jpg',
+    '../images/bio-photo.jpg',
+    '../images/bio-photo.jpg',
 ];
 
 let imageElements = [];
