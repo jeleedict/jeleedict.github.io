@@ -1,9 +1,20 @@
-const canvas = document.getElementById('ladderCanvas');
+const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-let participants = [];
-let images = [];
+
+const participants = ['Alice', 'Bob', 'Charlie', 'David', 'Eva'];
+const images = [
+    'https://example.com/image1.png',
+    'https://example.com/image2.png',
+    'https://example.com/image3.png',
+    'https://example.com/image4.png',
+    'https://example.com/image5.png',
+];
 
 let imageElements = [];
+let ladderPath = [];
+const ladderSpeed = 3;
+let animationInProgress = false;
+let selectedParticipant = null;
 
 function preloadImages() {
     imageElements = images.map(src => {
@@ -13,21 +24,12 @@ function preloadImages() {
     });
 }
 
-
 function generateLadder() {
-    preloadImages();
-    participants = document.getElementById('participants').value.split(',').map(p => p.trim());
-    images = document.getElementById('images').value.split(',').map(url => url.trim());
-    
-    if (participants.length !== images.length) {
-        alert('참가자와 이미지의 수가 일치하지 않습니다. 다시 입력해주세요.');
-        return;
-    }
-    
     canvas.width = participants.length * 100;
-    canvas.height = 500;
-
+    canvas.height = 600;
+    preloadImages();
     drawLadder();
+    updateParticipantSelect();
 }
 
 function drawLadder() {
@@ -42,7 +44,6 @@ function drawLadder() {
         ctx.drawImage(imageElements[i], i * 100 + 25, 0, 50, 50);
     }
 
-
     for (let i = 0; i < 5; i++) {
         for (let j = 0; j < participants.length - 1; j++) {
             if (Math.random() > 0.5) {
@@ -53,40 +54,6 @@ function drawLadder() {
             }
         }
     }
-}
-
-
-function showResults() {
-    const numSelected = parseInt(document.getElementById('numSelected').value);
-    if (isNaN(numSelected) || numSelected < 1 || numSelected > participants.length) {
-        alert('선택되어야 할 숫자가 올바르지 않습니다. 다시 입력해주세요.');
-        return;
-    }
-
-    const selectedIndices = getRandomIndices(numSelected, participants.length);
-    alert('선택된 참가자: ' + selectedIndices.map(index => participants[index]).join(', '));
-}
-
-function getRandomIndices(count, max) {
-    const indices = [];
-    while (indices.length < count) {
-        const index = Math.floor(Math.random() * max);
-        if (!indices.includes(index)) {
-            indices.push(index);
-        }
-    }
-    return indices;
-}
-
-
-const ladderSpeed = 3;
-let selectedParticipant = null;
-let animationInProgress = false;
-let ladderPath = [];
-
-function generateLadder() {
-    // ...
-    updateParticipantSelect();
 }
 
 function updateParticipantSelect() {
