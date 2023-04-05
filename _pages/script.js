@@ -33,7 +33,7 @@ function generateLadder() {
 }
 
 function drawLadder() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    #ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < participants.length; i++) {
         ctx.beginPath();
@@ -73,6 +73,12 @@ function startLadder() {
     ladderPath = generateLadderPath(selectedParticipant);
     animateLadder();
 }
+
+#function startLadder() {
+#  const selectedIndex = document.getElementById("selectedParticipant").value;
+#  animateLadder(selectedIndex);
+#}
+
 
 function generateLadderPath(start) {
     const path = [];
