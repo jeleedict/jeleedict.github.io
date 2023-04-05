@@ -48,10 +48,40 @@ document.getElementById("winners").addEventListener("change", (event) => {
 });
 
 
+let ladderMatrix = [];
+
+function createLadderMatrix() {
+  ladderMatrix = [];
+  for (let i = 0; i < 5; i++) {
+    const row = [];
+    for (let j = 0; j < participants.length - 1; j++) {
+      row.push(Math.random() > 0.5);
+    }
+    ladderMatrix.push(row);
+  }
+}
+
+function generateLadderPath(start) {
+  const path = [];
+  let currentPosition = start;
+  
+  for (let i = 0; i < ladderMatrix.length; i++) {
+    if (currentPosition > 0 && ladderMatrix[i][currentPosition - 1]) {
+      currentPosition--;
+    } else if (currentPosition < participants.length - 1 && ladderMatrix[i][currentPosition]) {
+      currentPosition++;
+    }
+    path.push(currentPosition);
+  }
+  return path;
+}
+
+
 function generateLadder() {
     canvas.width = participants.length * 100;
     canvas.height = 600;
     preloadImages();
+    createLadderMatrix();
     drawLadder();
     updateParticipantSelect();
     generateWinners(); 
@@ -84,9 +114,9 @@ function drawLadder() {
         ctx.drawImage(imageElements[i], i * 100 + 25, 0, 50, 50);
     }
 
-    for (let i = 0; i < 5; i++) {
+     for (let i = 0; i < ladderMatrix.length; i++) {
         for (let j = 0; j < participants.length - 1; j++) {
-            if (Math.random() > 0.5) {
+            if (ladderMatrix[i][j]) {
                 ctx.beginPath();
                 ctx.moveTo(j * 100 + 50, i * 100 + 100);
                 ctx.lineTo((j + 1) * 100 + 50, i * 100 + 100);
@@ -94,6 +124,7 @@ function drawLadder() {
             }
         }
     }
+
     
     for (let line of ladderLines) {
         ctx.beginPath();
@@ -149,6 +180,7 @@ function generateLadderPath(start) {
 }
 
 function animateLadder() {
+    
     animationInProgress = true;
     let step = 0;
     let stepProgress = 0;
@@ -167,6 +199,7 @@ function animateLadder() {
             step++;
         }
         
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawLadder();
         ctx.drawImage(
             img,
