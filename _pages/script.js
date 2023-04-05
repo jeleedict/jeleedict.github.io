@@ -50,9 +50,9 @@ document.getElementById("winners").addEventListener("change", (event) => {
 
 let ladderMatrix = [];
 
-function createLadderMatrix() {
+function createLadderMatrix(ladderHeight) {
   ladderMatrix = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < ladderHeight; i++) {
     const row = [];
     for (let j = 0; j < participants.length - 1; j++) {
       row.push(Math.random() > 0.5);
@@ -81,7 +81,7 @@ function generateLadder() {
     canvas.width = participants.length * 100;
     canvas.height = 600;
     preloadImages();
-    createLadderMatrix();
+    createLadderMatrix(10);
     drawLadder();
     updateParticipantSelect();
     generateWinners(); 
