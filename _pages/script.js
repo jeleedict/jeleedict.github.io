@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 const participants = ['Alice', 'Bob', 'Charlie', 'David', 'Eva'];
 const images = [
     '../images/bio-photo.jpg',
-    '../images/bio-photo.jpg,
+    '../images/bio-photo.jpg',
     '../images/bio-photo.jpg',
     '../images/bio-photo.jpg',
     '../images/bio-photo.jpg',
