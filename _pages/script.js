@@ -24,13 +24,54 @@ function preloadImages() {
     });
 }
 
+
+let winnersCount = 1;
+let results = [];
+
+function generateWinners() {
+  results = [];
+  for (let i = 0; i < participants.length; i++) {
+    results.push(false);
+  }
+
+  for (let i = 0; i < winnersCount; i++) {
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * participants.length);
+    } while (results[randomIndex]);
+    results[randomIndex] = true;
+  }
+}
+
+document.getElementById("winners").addEventListener("change", (event) => {
+  winnersCount = parseInt(event.target.value);
+});
+
+
 function generateLadder() {
     canvas.width = participants.length * 100;
     canvas.height = 600;
     preloadImages();
     drawLadder();
     updateParticipantSelect();
+    generateWinners(); 
 }
+
+let ladderLines = []; // 사다리 다리 정보를 저장할 변수
+
+function addLadderLine() {
+  const randomIndex = Math.floor(Math.random() * (participants.length - 1));
+  const randomHeight = Math.random() * (canvas.height - 100) + 50;
+  const line = {
+    x1: randomIndex * 100 + 50,
+    y1: randomHeight,
+    x2: (randomIndex + 1) * 100 + 50,
+    y2: randomHeight,
+  };
+  ladderLines.push(line);
+  drawLadder();
+}
+
 
 function drawLadder() {
     #ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -54,6 +95,24 @@ function drawLadder() {
             }
         }
     }
+    
+    for (let line of ladderLines) {
+        ctx.beginPath();
+        ctx.moveTo(line.x1, line.y1);
+        ctx.lineTo(line.x2, line.y2);
+        ctx.stroke();
+    }
+    
+    for (let i = 0; i < participants.length; i++) {
+    ctx.font = "16px Arial";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "black";
+    if (results[i]) {
+      ctx.fillText("당첨", i * 100 + 50, canvas.height - 10);
+    } else {
+      ctx.fillText("꽝", i * 100 + 50, canvas.height - 10);
+    }
+  }
 }
 
 function updateParticipantSelect() {
@@ -66,6 +125,7 @@ function updateParticipantSelect() {
         select.add(option);
     });
 }
+
 
 function startLadder() {
     if (animationInProgress) return;
