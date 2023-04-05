@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사다리 타기 게임</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>사다리 타기 게임</h1>
+        <div class="input-section">
+            <label for="participants">참가자 명단 (쉼표로 구분):</label>
+            <input type="text" id="participants" placeholder="예: 홍길동, 이순신, 강감찬">
+            <label for="images">참가자별 이미지 URL (쉼표로 구분):</label>
+            <input type="text" id="images" placeholder="예: url1, url2, url3">
+            <button onclick="generateLadder()">사다리 생성</button>
+        </div>
+        <canvas id="ladderCanvas"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
