@@ -77,6 +77,7 @@ function generateLadderPath(start) {
 }
 
 
+
 function generateLadder() {
     canvas.width = participants.length * 100;
     canvas.height = 600;
@@ -104,14 +105,13 @@ function addLadderLine() {
 
 
 function drawLadder() {
-
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
     for (let i = 0; i < participants.length; i++) {
         ctx.beginPath();
         ctx.moveTo(i * 100 + 50, 0);
         ctx.lineTo(i * 100 + 50, canvas.height);
         ctx.stroke();
-
-        ctx.drawImage(imageElements[i], i * 100 + 25, 0, 50, 50);
     }
 
      for (let i = 0; i < ladderMatrix.length; i++) {
@@ -124,7 +124,6 @@ function drawLadder() {
             }
         }
     }
-
     
     for (let line of ladderLines) {
         ctx.beginPath();
@@ -134,14 +133,19 @@ function drawLadder() {
     }
     
     for (let i = 0; i < participants.length; i++) {
-    ctx.font = "16px Arial";
-    ctx.textAlign = "center";
-    ctx.fillStyle = "black";
-    if (results[i]) {
-      ctx.fillText("당첨", i * 100 + 50, canvas.height - 10);
-    } else {
-      ctx.fillText("꽝", i * 100 + 50, canvas.height - 10);
+    ctx.drawImage(imageElements[i], i * 100 + 25, 0, 50, 50);
     }
+    
+    
+    for (let i = 0; i < participants.length; i++) {
+        ctx.font = "16px Arial";
+        ctx.textAlign = "center";
+        ctx.fillStyle = "black";
+        if (results[i]) {
+          ctx.fillText("당첨", i * 100 + 50, canvas.height - 10);
+        } else {
+          ctx.fillText("꽝", i * 100 + 50, canvas.height - 10);
+        }
   }
 }
 
@@ -162,21 +166,6 @@ function startLadder() {
     selectedParticipant = parseInt(document.getElementById('selectedParticipant').value);
     ladderPath = generateLadderPath(selectedParticipant);
     animateLadder();
-}
-
-
-function generateLadderPath(start) {
-    const path = [];
-    let currentPosition = start;
-    for (let i = 0; i < 5; i++) {
-        if (currentPosition > 0 && Math.random() > 0.5) {
-            currentPosition--;
-        } else if (currentPosition < participants.length - 1 && Math.random() > 0.5) {
-            currentPosition++;
-        }
-        path.push(currentPosition);
-    }
-    return path;
 }
 
 function animateLadder() {
